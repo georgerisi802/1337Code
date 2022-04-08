@@ -22,4 +22,4 @@ class Solution {
 		return new int [] {0,0}; // would be error
 	}
 }
-
+// Runs in linear time
