@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class GameOfLife_Test {
+class GameOfLifeTest {
 
 	@Test
 	void example1() {
