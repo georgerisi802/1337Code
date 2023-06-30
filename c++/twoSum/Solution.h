@@ -12,23 +12,23 @@ You can return the answer in any order.
 #define SOLUTION_H_
 
 #include <vector>
-#include <unordered_set>
+#include <unordered_map>
 
 class Solution {
 public:
 	std::vector<int> twoSum(std::vector<int>& nums, int target){
 
 		std::vector<int> returnVec;
-		std::unordered_set<int> set;
+		std::unordered_map<int, int> map;
 
 		for(size_t i=0; i < nums.size(); ++i){
 
-			if(set.count(target - nums[i]) > 0){
-				returnVec.emplace_back(nums[i]);
-				returnVec.emplace_back(target - nums[i]);
+			if(map.count(target - nums[i]) > 0){
+				returnVec.emplace_back(i);
+				returnVec.emplace_back(map.at(target - nums[i]));
 				return returnVec;
 			}
-			else set.insert(nums[i]);
+			else map.insert(std::make_pair(nums[i], i));
 		}
 		return returnVec;
 	}

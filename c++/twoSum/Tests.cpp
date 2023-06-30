@@ -24,7 +24,7 @@ TEST(TwoSumTest, nominal){
 		std::vector<int> nums{2,7,11,15};
 		Solution sol;
 		std::vector<int> ans = sol.twoSum(nums,9);
-		std::vector<int> expected{1,2};
+		std::vector<int> expected{1,0};
 
 		EXPECT_EQ(expected, ans);
 	}
