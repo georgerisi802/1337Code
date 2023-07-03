@@ -2,9 +2,11 @@
 	2 <= nums.length <= 104
 	-109 <= nums[i] <= 109
 	-109 <= target <= 109
+	Only one valid answer exists
  */
 
 #include <vector>
+#include <algorithm>
 #include "gtest/gtest.h"
 #include "Solution.h"
 
@@ -20,13 +22,33 @@ public:
 };
 
 TEST(TwoSumTest, nominal){
+	std::vector<int> nums;
+	Solution sol;
+	std::vector<int> ans;
+	std::vector<int> exp;
 	{
-		std::vector<int> nums{2,7,11,15};
-		Solution sol;
-		std::vector<int> ans = sol.twoSum(nums,9);
-		std::vector<int> expected{1,0};
+		nums = {2,7,11,15};
+		ans = sol.twoSum(nums,9);
+		std::sort(ans.begin(), ans.end());
+		exp = {0,1};
 
-		EXPECT_EQ(expected, ans);
+		EXPECT_EQ(exp, ans);
+	}
+	{
+		nums = {3,2,4};
+		ans = sol.twoSum(nums,6);
+		std::sort(ans.begin(), ans.end());
+		exp = {1,2};
+
+		EXPECT_EQ(exp, ans);
+	}
+	{
+		nums = {3,3};
+		ans = sol.twoSum(nums,6);
+		std::sort(ans.begin(), ans.end());
+		exp = {0,1};
+
+		EXPECT_EQ(exp, ans);
 	}
 
 }

@@ -30,6 +30,9 @@ public:
 			}
 			else map.insert(std::make_pair(nums[i], i));
 		}
+
+		// Question states that there is always exactly one solution, so this is
+		// never hit.
 		return returnVec;
 	}
 
