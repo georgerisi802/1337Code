@@ -9,6 +9,7 @@
 #include <algorithm>
 #include "gtest/gtest.h"
 #include "Solution.h"
+#include "SolutionTemplated.h"
 
 class TwoSumTest : public ::testing::Test{
 public:
@@ -51,6 +52,20 @@ TEST(TwoSumTest, nominal){
 		EXPECT_EQ(exp, ans);
 	}
 
+}
+
+TEST(TwoSumTest, templated){
+	{
+		std::vector<float> nums;
+		SolutionTemplated<float> solT;
+		std::vector<float> ans;
+		std::vector<float> exp;
+
+		nums = {1.9,7.1,11.0,15.2};
+		ans = solT.twoSum(nums,9);
+		std::sort(ans.begin(), ans.end());
+		exp = {0,1};
+	}
 }
 
 int main(int argc, char** argv){
