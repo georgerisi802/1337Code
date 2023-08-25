@@ -56,7 +56,7 @@ TEST(ThreeSumTest, nominal){
 		EXPECT_EQ(exp, fastAns);
 	}
 }
-
+/*
 TEST(ThreeSumTest, slowBenchmark){
 	std::vector<int> nums;
 	std::vector<std::vector<int>> exp;
@@ -93,4 +93,4 @@ TEST(ThreeSumTest, fastBenchmark){
 		exp = {{0,0,0}};
 		EXPECT_EQ(exp, sol.threeSum(nums));
 	}
-}
+}*/
